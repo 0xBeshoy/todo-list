@@ -56,10 +56,40 @@
 // console.log(titles)
 // titles[0].textContent = "Hello World";
 
-var oddItems = document.querySelectorAll('li:nth-child(odd)')
-var evenItems = document.querySelectorAll('li:nth-child(even)')
+// var oddItems = document.querySelectorAll('li:nth-child(odd)')
+// var evenItems = document.querySelectorAll('li:nth-child(even)')
 
-for(var i = 0; i < oddItems.length; i++) {
-    oddItems[i].style.backgroundColor = '#f4f4f4';
-    evenItems[i].style.backgroundColor = '#ccc';
-}
+// for(var i = 0; i < oddItems.length; i++) {
+//     oddItems[i].style.backgroundColor = '#f4f4f4';
+//     evenItems[i].style.backgroundColor = '#ccc';
+// }
+
+
+// Traversing the DOM
+
+var itemList = document.querySelector('#items');
+
+console.log(itemList.children);
+itemList.children[1].style.textDecoration = 'line-through'
+itemList.children[2].style.backgroundColor = 'yellow'
+
+
+// Creating the Element that I'd like to append to the DOM
+var newDiv = document.createElement('div');
+// Adding a class to that element
+newDiv.className = 'Hello';
+// Adding an ID to that element
+newDiv.id = 'HelloID';
+// Adding an Attribute
+newDiv.setAttribute('title', 'Hello World');
+// Adding text to that element
+newDiv.appendChild(document.createTextNode('Hello World'));
+
+// Appending that element to the DOM
+
+// Selecting the elements around the element i'd like to append 
+var container = document.querySelector('header .container')
+var h1 = document.querySelector('header h1')
+// Appending the element
+container.insertBefore(newDiv, h1);
+newDiv.style.fontSize = '15px'
