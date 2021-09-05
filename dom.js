@@ -67,29 +67,56 @@
 
 // Traversing the DOM
 
-var itemList = document.querySelector('#items');
+// var itemList = document.querySelector('#items');
 
-console.log(itemList.children);
-itemList.children[1].style.textDecoration = 'line-through'
-itemList.children[2].style.backgroundColor = 'yellow'
+// console.log(itemList.children);
+// itemList.children[1].style.textDecoration = 'line-through'
+// itemList.children[2].style.backgroundColor = 'yellow'
 
 
-// Creating the Element that I'd like to append to the DOM
-var newDiv = document.createElement('div');
-// Adding a class to that element
-newDiv.className = 'Hello';
-// Adding an ID to that element
-newDiv.id = 'HelloID';
-// Adding an Attribute
-newDiv.setAttribute('title', 'Hello World');
-// Adding text to that element
-newDiv.appendChild(document.createTextNode('Hello World'));
+// // Creating the Element that I'd like to append to the DOM
+// var newDiv = document.createElement('div');
+// // Adding a class to that element
+// newDiv.className = 'Hello';
+// // Adding an ID to that element
+// newDiv.id = 'HelloID';
+// // Adding an Attribute
+// newDiv.setAttribute('title', 'Hello World');
+// // Adding text to that element
+// newDiv.appendChild(document.createTextNode('Hello World'));
 
-// Appending that element to the DOM
+// // Appending that element to the DOM
 
-// Selecting the elements around the element i'd like to append 
-var container = document.querySelector('header .container')
-var h1 = document.querySelector('header h1')
-// Appending the element
-container.insertBefore(newDiv, h1);
-newDiv.style.fontSize = '15px'
+// // Selecting the elements around the element i'd like to append 
+// var container = document.querySelector('header .container')
+// var h1 = document.querySelector('header h1')
+// // Appending the element
+// container.insertBefore(newDiv, h1);
+// newDiv.style.fontSize = '15px'
+
+
+
+// // Events
+
+// var button = document.getElementById('button').addEventListener(
+//     'click', buttonClick
+// );
+
+// function buttonClick(e){
+//     // console.log("Button Clicked");
+//     // document.getElementById('header-title').textContent = 'Hello World';
+//     // console.log(e)
+// }
+
+var button = document.getElementById('button')
+button.addEventListener('click', runEvent);
+button.addEventListener('dblclick', runEvent);
+button.addEventListener('mouseover', runEvent);
+// button.addEventListener('mouseenter', runEvent);
+// button.addEventListener('mouseleave', runEvent);
+
+
+function runEvent(e){
+    console.log(e.type);
+    
+}
